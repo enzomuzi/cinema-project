@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="563.55267" height="585.77527" version="1.0">
+  <defs>
+    <path id="e" fill="#fff" d="M9.0357146 17.196428a.48214287.48214287 0 1 1-.9642858 0 .48214287.48214287 0 1 1 .9642858 0z" color="#000" display="block" style="marker:none"/>
+  </defs>
+  <defs>
+    <linearGradient id="a">
+      <stop offset="0" stop-color="#939393"/>
+      <stop offset="1" stop-color="#d9d9d9"/>
+    </linearGradient>
+    <linearGradient id="b">
+      <stop offset="0" stop-color="#fdfdfd"/>
+      <stop offset=".5" stop-color="#e8e8e8"/>
+      <stop offset="1" stop-color="#d4d4d4"/>
+    </linearGradient>
+    <linearGradient xlink:href="#a" id="d" x1="10.678571" x2="7.9285712" y1="15.928572" y2="11.107142" gradientTransform="matrix(13.57809 0 0 12.97439 -684.4397 -695.17839)" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#b" id="c" x1="2.7612331" x2="18.772917" y1="6.1102505" y2="18.693317" gradientTransform="matrix(13.54823 0 0 13.00556 -508.33972 -835.50847)" gradientUnits="userSpaceOnUse"/>
+  </defs>
+  <g transform="translate(645.39964 691.10534)">
+    <rect width="542.97681" height="90.27906" x="-491.13211" y="-702.02832" fill="url(#c)" color="#000" display="block" rx="15.483663" ry="14.863476" style="marker:none" transform="matrix(.97655 -.21527 .23469 .97207 0 0)"/>
+    <rect width="517.84497" height="372.30823" x="-610.69897" y="-480.14453" fill="#1b1b1b" stroke="#3b3b3b" stroke-width="5.01242685" color="#000" display="block" rx="15.515952" ry="15.19626" style="marker:none"/>
+    <rect width="540.48657" height="80.575974" x="80.993851" y="-493.63019" fill="#e0e0e0" color="#000" display="block" rx="15.517737" ry="14.148071" style="marker:none" transform="matrix(-.99998 .00677 .00815 .99997 0 0)"/>
+    <path fill-rule="evenodd" d="m-155.87189-494.06975 52.77829 88.74537-66.31467-2.38747-51.87816-84.51386 65.41454-1.84404zm-127.28057.37174 50.66647 87.26452-65.86463-.26885-50.2164-85.17103 65.41456-1.82464zm-133.391 2.8873 50.44145 84.34419-65.86463-.26301-49.99136-82.29618 65.41454-1.785z"/>
+    <path d="M-576.94459-484.75275c-2.53387 2.84094-4.15386 6.19344-4.12357 10.35627l.02057 43.82899 15.85274 24.6412 65.32802-.449-50.15744-78.38023-26.92032.00277z" color="#000" display="block" style="marker:none"/>
+    <path fill-rule="evenodd" d="m-546.71904-595.66267-32.97537 91.39309 64.011-17.88126 32.97536-87.41947-64.01099 13.90764zm126.08228-28.23508-35.88497 99.65334 64.011-16.26992 35.88495-97.6196-64.01098 14.23618zm130.93156-30.85267-34.9151 101.52892 64.01099-16.24464 34.9151-99.49834-64.01099 14.21406z"/>
+    <path d="M-119.41804-689.55971c3.30566 2.34763 5.79013 5.47021 6.76431 9.87248l9.53445 39.82568-15.59011 41.9077-73.82759 18.46885 33.95038-101.00815 39.16856-9.06656z" color="#000" display="block" style="marker:none"/>
+    <rect width="540.48779" height="84.447739" x="81.018105" y="-494.97458" fill="none" stroke="#2b2b2b" stroke-width="4.95159674" color="#000" display="block" rx="15.517773" ry="14.827904" style="marker:none" transform="matrix(-.99997 .0071 .00778 .99997 0 0)"/>
+    <rect width="542.97681" height="90.27906" x="-493.19235" y="-700.42169" fill="none" stroke="#2e2e2e" stroke-width="4.9520874" color="#000" display="block" rx="15.483663" ry="14.863476" style="marker:none" transform="matrix(.97655 -.21527 .23469 .97207 0 0)"/>
+    <path fill="url(#d)" fill-rule="evenodd" stroke="#1b1b1b" stroke-width="3.61430359" d="M-595.69718-553.85022v101.01487c0 6.02383 5.33427 11.58429 11.63838 12.04765h107.16991c11.72691 0 17.29661-16.37175 8.24383-25.02204l-84.37811-94.52767c-13.09315-18.07146-42.67401-9.26742-42.67401 6.48719z"/>
+    <use xlink:href="#e" color="#000" display="block" style="marker:none" transform="matrix(13.57809 0 0 12.97439 -685.40956 -759.58699)"/>
+    <use xlink:href="#e" color="#000" display="block" style="marker:none" transform="matrix(13.57809 0 0 12.97439 -685.40956 -691.00808)"/>
+    <use xlink:href="#e" color="#000" display="block" style="marker:none" transform="matrix(13.57809 0 0 12.97439 -617.03415 -691.00808)"/>
+    <path fill="#fff" d="M-601.06671-261.67792h496.5127v3.3994901h-496.5127zm0 30.68561h242.97427v3.3994901h-242.97427zm0-100.70816h496.5127v3.3994901h-496.5127z"/>
+    <text xml:space="preserve" x="-590.87042" y="-353.92365" fill="#fff" font-family="DejaVu Sans" font-size="36.14303589" font-weight="700" style="text-align:start;line-height:125%" transform="scale(1.023 .97752)"><tspan x="-590.87042" y="-353.92365">PROD. n°</tspan></text>
+    <text xml:space="preserve" x="-589.10919" y="-311.7291" fill="#fff" font-family="DejaVu Sans" font-size="21.68582153" font-weight="700" style="text-align:start;line-height:125%" transform="scale(1.023 .97752)"><tspan x="-589.10919" y="-311.7291">SCENE</tspan></text>
+    <text xml:space="preserve" x="-588.87976" y="-244.72986" fill="#fff" font-family="DejaVu Sans" font-size="14.45721436" font-weight="700" style="text-align:start;line-height:125%" transform="scale(1.023 .97752)"><tspan x="-588.87976" y="-244.72986">DATE</tspan></text>
+    <path fill="#fff" d="M-354.00729-331.83304v133.24512h-3.5569327v-133.24512z"/>
+    <text xml:space="preserve" x="-337.69348" y="-314.01727" fill="#fff" font-family="DejaVu Sans" font-size="21.68582153" font-weight="700" style="text-align:start;line-height:125%" transform="scale(1.023 .97752)"><tspan x="-337.69348" y="-314.01727">PRISE</tspan></text>
+    <path fill="#fff" d="M-601.06671-199.33888h496.5127v3.3994901h-496.5127z"/>
+    <text xml:space="preserve" x="-589.54327" y="-172.0694" fill="#fff" font-family="DejaVu Sans" font-size="21.68582153" font-weight="700" style="text-align:start;line-height:125%" transform="scale(1.023 .97752)"><tspan x="-589.54327" y="-172.0694">REALISATEUR</tspan></text>
+    <text xml:space="preserve" x="-337.25934" y="-240.69856" fill="#fff" font-family="DejaVu Sans" font-size="21.68582153" font-weight="700" style="text-align:start;line-height:125%" transform="scale(1.023 .97752)"><tspan x="-337.25934" y="-240.69856">SON</tspan></text>
+    <path fill="#fff" d="M-601.06671-157.89113h496.5127v3.3994901h-496.5127z"/>
+    <text xml:space="preserve" x="-588.63269" y="-130.20413" fill="#fff" font-family="DejaVu Sans" font-size="21.68582153" font-weight="700" style="text-align:start;line-height:125%" transform="scale(1.023 .97752)"><tspan x="-588.63269" y="-130.20413">CAMERAMAN</tspan></text>
+  </g>
+</svg>
