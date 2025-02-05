@@ -1,3 +1,6 @@
+<mat-toolbar>
+  <span>Cartaz de filmes</span>
+</mat-toolbar>
 <mat-card class="cards-container">
   <div *ngIf="films$ | async as films; else loadingTemplate">
     <mat-card-content>
@@ -22,7 +25,14 @@
           <p>{{ film.hours }}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Comprar Ingresso</button>
+          <button mat-button>
+            Comprar Ingresso
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="movie"
+            ></mat-icon>
+          </button>
         </mat-card-actions>
       </mat-card>
     </mat-card-content>
