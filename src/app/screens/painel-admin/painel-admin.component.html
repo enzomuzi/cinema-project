@@ -1,0 +1,75 @@
+<mat-toolbar>
+  <span>Painel de Administrador</span>
+</mat-toolbar>
+<main>
+  <section>
+    <h1>
+      Para criar, editar ou remover os cartazes de filmes, selecione a opção
+      abaixo:
+    </h1>
+    <section>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <div class="example-button-container">
+            <button
+              mat-mini-fab
+              aria-label="Example icon button with a menu icon"
+            >
+              <mat-icon (click)="onAdd()">add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <mat-card class="cards-container">
+      <div *ngIf="films$ | async as films; else loadingTemplate">
+        <mat-card-content>
+          <mat-card
+            *ngFor="let film of films"
+            class="films-card"
+            appearance="outlined"
+          >
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{ film.name }}</mat-card-title>
+              <mat-card-subtitle>{{ film.description }}</mat-card-subtitle>
+            </mat-card-header>
+            <img
+              mat-card-image
+              src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+              alt="Photo of a Shiba Inu"
+            />
+            <mat-card-content>
+              <p>{{ film.hours }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <div class="example-button-container">
+                <button
+                  mat-mini-fab
+                  aria-label="Example icon button with a menu icon"
+                >
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
+              <div class="example-button-container">
+                <button
+                  mat-mini-fab
+                  aria-label="Example icon button with a menu icon"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </mat-card-content>
+      </div>
+
+      <ng-template #loadingTemplate>
+        <div class="spinner-container">
+          <mat-spinner></mat-spinner>
+        </div>
+      </ng-template>
+    </mat-card>
+  </section>
+</main>

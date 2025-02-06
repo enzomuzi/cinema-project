@@ -7,7 +7,7 @@ import { delay, first, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class FilmesCartazService {
-  private readonly API = '/assets/films.json';
+  private readonly API = 'api/films';
 
   constructor(private httpClient: HttpClient) {}
 
