@@ -52,9 +52,8 @@ export class PainelAdminComponent {
     });
   }
 
+  ngOnInit(): void {}
   onAdd() {
     this.router.navigate(['new'], { relativeTo: this.route });
   }
-
-  ngOnInit(): void {}
 }
