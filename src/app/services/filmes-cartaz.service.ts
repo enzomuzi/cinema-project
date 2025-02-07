@@ -18,4 +18,8 @@ export class FilmesCartazService {
       tap((films) => console.log(films))
     );
   }
+
+  save(record: Films) {
+    return this.httpClient.post<Films>(this.API, record);
+  }
 }

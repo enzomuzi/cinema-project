@@ -11,6 +11,7 @@ import { Films } from '../../modules/model/films';
 import { FilmesCartazService } from '../../services/filmes-cartaz.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-painel-admin',
@@ -21,6 +22,7 @@ import { ActivatedRoute, Router } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './painel-admin.component.html',
   styleUrl: './painel-admin.component.css',
@@ -28,7 +30,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PainelAdminComponent {
   films$: Observable<Films[]>;
 
-  displayedColumns = ['name', 'description', 'hours'];
+  displayedColumns = ['name', 'language', 'hours', 'img'];
 
   // dataSource: MatTableDataSource<any> = new MatTableDataSource();
 

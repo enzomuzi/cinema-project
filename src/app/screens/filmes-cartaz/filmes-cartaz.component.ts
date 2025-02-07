@@ -32,7 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class FilmesCartazComponent implements OnInit {
   films$: Observable<Films[]>;
 
-  displayedColumns = ['name', 'description', 'hours'];
+  displayedColumns = ['name', 'language', 'hours', 'img'];
 
   // dataSource: MatTableDataSource<any> = new MatTableDataSource();
 

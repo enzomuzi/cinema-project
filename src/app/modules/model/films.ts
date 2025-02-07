@@ -1,6 +1,7 @@
 export interface Films {
   _id: string;
   name: string;
-  description: string;
+  language: string;
   hours: string;
+  img: string;
 }
