@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { MatCard, MatCardActions } from '@angular/material/card';
-import { MatToolbar } from '@angular/material/toolbar';
-import { FilmesCartazService } from '../../services/filmes-cartaz.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { FilmesCartazService } from '../../services/filmes-cartaz.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-films-form',
+  standalone: true,
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatCard,
-    MatToolbar,
-    MatCardActions,
+    MatCardModule,
+    MatToolbarModule,
     MatSnackBarModule,
   ],
   templateUrl: './films-form.component.html',
@@ -24,10 +27,11 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 })
 export class FilmsFormComponent implements OnInit {
   form: FormGroup;
+
   constructor(
     private readonly formBuilder: FormBuilder,
-    private service: FilmesCartazService,
-    private snackBar: MatSnackBar
+    private readonly service: FilmesCartazService,
+    private readonly snackBar: MatSnackBar
   ) {
     this.form = this.formBuilder.group({
       name: [null],
@@ -40,17 +44,23 @@ export class FilmsFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    this.service.save(this.form.value).subscribe(
-      (data) => console.log(data),
-      (error) => this.onError()
-    );
+    if (this.form.valid) {
+      this.service.save(this.form.value).subscribe({
+        next: (data) => console.log('Filme salvo:', data),
+        error: () => this.onError(),
+      });
+    } else {
+      this.snackBar.open('Preencha todos os campos corretamente.', 'Fechar', {
+        duration: 3000,
+      });
+    }
   }
 
   onCancel() {
-    console.log('cancelou');
+    console.log('Cancelou');
   }
 
   private onError() {
-    this.snackBar.open('Erro ao salvar filme.');
+    this.snackBar.open('Erro ao salvar filme.', 'Fechar', { duration: 3000 });
   }
 }

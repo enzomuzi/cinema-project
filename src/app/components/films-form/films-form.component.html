@@ -2,10 +2,7 @@
   <span>Preencha abaixo as informações do filme para ser listado</span>
 </mat-toolbar>
 <mat-card>
-  <form
-    action="
-"
-  >
+  <form [formGroup]="form">
     <mat-form-field>
       <mat-label>Nome do Filme</mat-label>
       <input matInput formControlName="name" />
