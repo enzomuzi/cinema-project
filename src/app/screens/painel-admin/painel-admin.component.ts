@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -27,8 +27,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './painel-admin.component.html',
   styleUrl: './painel-admin.component.css',
 })
-export class PainelAdminComponent {
+export class PainelAdminComponent implements OnInit {
   films$: Observable<Films[]>;
+
+  @Input() films: Films[] = [];
+  @Output() add = new EventEmitter<Films>();
+  @Output() edit = new EventEmitter<Films>();
 
   displayedColumns = ['name', 'language', 'hours', 'img'];
 
@@ -48,6 +52,10 @@ export class PainelAdminComponent {
     );
   }
 
+  film = {
+    img: '{{film.img}}',
+  };
+
   onError(errorMsg: string) {
     this.dialog.open(ErrorPopupComponent, {
       data: errorMsg,
@@ -57,5 +65,9 @@ export class PainelAdminComponent {
   ngOnInit(): void {}
   onAdd() {
     this.router.navigate(['new'], { relativeTo: this.route });
+  }
+
+  onEdit(film: Films) {
+    this.router.navigate(['edit', film.id], { relativeTo: this.route });
   }
 }

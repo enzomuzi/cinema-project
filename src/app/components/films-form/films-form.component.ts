@@ -8,6 +8,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { FilmesCartazService } from '../../services/filmes-cartaz.service';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { Films } from '../../modules/model/films';
 
 @Component({
   selector: 'app-films-form',
@@ -31,17 +33,28 @@ export class FilmsFormComponent implements OnInit {
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly service: FilmesCartazService,
-    private readonly snackBar: MatSnackBar
+    private readonly snackBar: MatSnackBar,
+    private readonly route: ActivatedRoute
   ) {
     this.form = this.formBuilder.group({
-      name: [null],
-      language: [null],
-      hours: [null],
-      img: [null],
+      id: [''],
+      name: [''],
+      language: [''],
+      hours: [''],
+      img: [''],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const film: Films = this.route.snapshot.data['film'];
+    this.form.setValue({
+      id: film.id,
+      name: film.name,
+      language: film.language,
+      hours: film.hours,
+      img: film.img,
+    })
+  }
 
   onSubmit() {
     if (this.form.valid) {
