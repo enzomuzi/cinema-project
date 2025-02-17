@@ -9,7 +9,9 @@ import { delay, first, Observable, tap } from 'rxjs';
 export class FilmesCartazService {
   private readonly API = 'api/films';
 
-  constructor(private readonly httpClient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) {
+    
+  }
 
   list() {
     return this.httpClient.get<Films[]>(this.API).pipe(
@@ -29,5 +31,9 @@ export class FilmesCartazService {
 
   edit(record: Films) {
     return this.httpClient.put<Films>(this.API, record);
+  }
+
+  delete(id: string) {
+    return this.httpClient.delete(`${this.API}/${id}`).pipe(first());
   }
 }

@@ -31,7 +31,6 @@
             appearance="outlined"
           >
             <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>{{ film.name }}</mat-card-title>
               <mat-card-subtitle>{{ film.language }}</mat-card-subtitle>
             </mat-card-header>
@@ -53,7 +52,7 @@
                   mat-mini-fab
                   aria-label="Example icon button with a menu icon"
                 >
-                  <mat-icon>delete</mat-icon>
+                  <mat-icon (click)="onDelete(film)">delete</mat-icon>
                 </button>
               </div>
             </mat-card-actions>
