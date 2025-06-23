@@ -1,0 +1,28 @@
+.cards-container {
+  background-color: aliceblue;
+  border-color: aliceblue;
+  margin: 40px;
+}
+
+.films-card {
+  max-width: 400px;
+  margin: 25px;
+  text-align: center;
+  display: inline-flex;
+  color: white;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+}
+
+.text-content {
+  text-align: center;
+}
+
+.spinner-container {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
