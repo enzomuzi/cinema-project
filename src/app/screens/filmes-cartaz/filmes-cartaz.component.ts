@@ -55,4 +55,8 @@ export class FilmesCartazComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  film = {
+    img: '{{film.img}}',
+  };
 }

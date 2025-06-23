@@ -8,6 +8,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { FilmesCartazService } from '../../services/filmes-cartaz.service';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Films } from '../../modules/model/films';
 
 @Component({
   selector: 'app-films-form',
@@ -31,22 +33,35 @@ export class FilmsFormComponent implements OnInit {
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly service: FilmesCartazService,
-    private readonly snackBar: MatSnackBar
+    private readonly snackBar: MatSnackBar,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
   ) {
     this.form = this.formBuilder.group({
-      name: [null],
-      language: [null],
-      hours: [null],
-      img: [null],
+      id: [''],
+      name: [''],
+      language: [''],
+      hours: [''],
+      img: [''],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const film: Films = this.route.snapshot.data['film'];
+    this.form.setValue({
+      id: film.id,
+      name: film.name,
+      language: film.language,
+      hours: film.hours,
+      img: film.img,
+    })
+
+  }
 
   onSubmit() {
     if (this.form.valid) {
       this.service.save(this.form.value).subscribe({
-        next: (data) => console.log('Filme salvo:', data),
+        next: (data) => this.onSent(),
         error: () => this.onError(),
       });
     } else {
@@ -54,13 +69,24 @@ export class FilmsFormComponent implements OnInit {
         duration: 3000,
       });
     }
+    
   }
 
+
   onCancel() {
-    console.log('Cancelou');
+    this.snackBar.open('Operação cancelada.', 'Fechar', { duration: 3000 });
+    this.form.reset();
+    this.router.navigate(['/admin']);
+  }
+
+  onSent() {
+    this.snackBar.open('Filme salvo com sucesso.', 'Fechar', { duration: 3000 });
+    this.form.reset();
+    this.router.navigate(['/admin']);
   }
 
   private onError() {
     this.snackBar.open('Erro ao salvar filme.', 'Fechar', { duration: 3000 });
+    this.router.navigate(['/admin']);
   }
 }
