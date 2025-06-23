@@ -12,15 +12,10 @@
         appearance="outlined"
       >
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>{{ film.name }}</mat-card-title>
           <mat-card-subtitle>{{ film.language }}</mat-card-subtitle>
         </mat-card-header>
-        <img
-          mat-card-image
-          src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-          alt="Photo of a Shiba Inu"
-        />
+        <img [src]="film.img" alt="Imagem do filme" />
         <mat-card-content>
           <p>{{ film.hours }}</p>
         </mat-card-content>

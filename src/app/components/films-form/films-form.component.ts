@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { MatCard, MatCardActions } from '@angular/material/card';
-import { MatToolbar } from '@angular/material/toolbar';
-import { FilmesCartazService } from '../../services/filmes-cartaz.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { FilmesCartazService } from '../../services/filmes-cartaz.service';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Films } from '../../modules/model/films';
 
 @Component({
   selector: 'app-films-form',
+  standalone: true,
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatCard,
-    MatToolbar,
-    MatCardActions,
+    MatCardModule,
+    MatToolbarModule,
     MatSnackBarModule,
   ],
   templateUrl: './films-form.component.html',
@@ -24,33 +29,64 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 })
 export class FilmsFormComponent implements OnInit {
   form: FormGroup;
+
   constructor(
     private readonly formBuilder: FormBuilder,
-    private service: FilmesCartazService,
-    private snackBar: MatSnackBar
+    private readonly service: FilmesCartazService,
+    private readonly snackBar: MatSnackBar,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
   ) {
     this.form = this.formBuilder.group({
-      name: [null],
-      language: [null],
-      hours: [null],
-      img: [null],
+      id: [''],
+      name: [''],
+      language: [''],
+      hours: [''],
+      img: [''],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const film: Films = this.route.snapshot.data['film'];
+    this.form.setValue({
+      id: film.id,
+      name: film.name,
+      language: film.language,
+      hours: film.hours,
+      img: film.img,
+    })
 
-  onSubmit() {
-    this.service.save(this.form.value).subscribe(
-      (data) => console.log(data),
-      (error) => this.onError()
-    );
   }
 
+  onSubmit() {
+    if (this.form.valid) {
+      this.service.save(this.form.value).subscribe({
+        next: (data) => this.onSent(),
+        error: () => this.onError(),
+      });
+    } else {
+      this.snackBar.open('Preencha todos os campos corretamente.', 'Fechar', {
+        duration: 3000,
+      });
+    }
+    
+  }
+
+
   onCancel() {
-    console.log('cancelou');
+    this.snackBar.open('Operação cancelada.', 'Fechar', { duration: 3000 });
+    this.form.reset();
+    this.router.navigate(['/admin']);
+  }
+
+  onSent() {
+    this.snackBar.open('Filme salvo com sucesso.', 'Fechar', { duration: 3000 });
+    this.form.reset();
+    this.router.navigate(['/admin']);
   }
 
   private onError() {
-    this.snackBar.open('Erro ao salvar filme.');
+    this.snackBar.open('Erro ao salvar filme.', 'Fechar', { duration: 3000 });
+    this.router.navigate(['/admin']);
   }
 }
