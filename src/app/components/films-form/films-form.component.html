@@ -5,23 +5,23 @@
   <form [formGroup]="form">
     <mat-form-field>
       <mat-label>Nome do Filme</mat-label>
-      <input matInput formControlName="name" />
+      <input matInput formControlName="name" required/>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Selecione o idioma:</mat-label>
-      <mat-select formControlName="language">
-        <mat-option value="empty"></mat-option>
-        <mat-option value="dublado">Dublado</mat-option>
-        <mat-option value="legendado">Legendado</mat-option>
+      <mat-select formControlName="language" required>
+        <mat-option value=""></mat-option>
+        <mat-option value="Dublado">Dublado</mat-option>
+        <mat-option value="Legendado">Legendado</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Horário da sessão</mat-label>
-      <input matInput formControlName="hours" />
+      <input matInput formControlName="hours" required/>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Link da imagem</mat-label>
-      <input matInput formControlName="img" />
+      <input matInput formControlName="img" required/>
     </mat-form-field>
   </form>
   <mat-card-actions>
