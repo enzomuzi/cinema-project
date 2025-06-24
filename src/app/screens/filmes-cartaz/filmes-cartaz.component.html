@@ -1,5 +1,19 @@
-<mat-toolbar>
+<mat-toolbar class="toolbar">
   <span>Cartaz de filmes</span>
+  <div class="icons">
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-icon-button routerLink="/login"
+        routerLinkActive="active">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>logout</mat-icon>
+    </button>
+    <span class="spacer"></span>
+  </div>
 </mat-toolbar>
 <mat-card class="cards-container">
   <div *ngIf="films$ | async as films; else loadingTemplate">

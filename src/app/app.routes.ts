@@ -18,8 +18,6 @@ export const routes: Routes = [
   {
     path: 'cartaz',
     component: FilmesCartazComponent,
-    // loadChildren: () =>
-    //   import('./modules/films/films.module').then((m) => m.FilmsModule),
   },
   {
     path: 'admin',
