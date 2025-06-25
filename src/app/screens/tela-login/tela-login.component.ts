@@ -44,6 +44,6 @@ export class TelaLoginComponent {
     console.log(this.loginForm.value);
   }
   navigate() {
-    this.router.navigate(['/cadastro']);
+    this.router.navigate(['/register']);
   }
 }
