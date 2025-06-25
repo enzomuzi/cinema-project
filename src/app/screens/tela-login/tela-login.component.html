@@ -1,8 +1,30 @@
-<main>
   <app-layout-login
     title="Cinema Muzi"
     primaryBtnText="Entrar"
     secondaryBtnText="Registrar"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
   >
+  <form [formGroup]="loginForm">
+    <app-input-primary
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="Email"
+      placeholder="Digite seu email"
+    >
+      <img src="../../../assets/svg/email-icon.svg" alt="Ícone de email">
+    </app-input-primary>
+    <app-input-primary
+      formControlName="password"
+      inputName="password"
+      type="password"
+      label="Senha"
+      placeholder="Digite sua senha"
+    >
+      <img src="../../../assets/svg/password-icon.svg" alt="Ícone de email">
+    </app-input-primary>
+    <span>Esqueceu sua senha?</span>
+  </form>
   </app-layout-login>
-</main>

@@ -1,9 +1,3 @@
-:root {
-  --background-color: #f4f4f4;
-  --gray-bg: #ccc;
-  --primary-color: #3498db;
-}
-
 main {
   display: flex;
   flex-direction: row;
@@ -54,7 +48,7 @@ main .form-section .btn-wrapper .divider {
   gap: 20px;
   width: 100%;
   font-size: 14px;
-  color: var(--gray-bg);
+  color: black;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -62,7 +56,7 @@ main .form-section .btn-wrapper .divider {
 main .form-section .btn-wrapper .divider div {
   flex-grow: 1;
   height: 2px;
-  background-color: var(--gray-bg);
+  background-color: var(--background-color);
 }
 
 main .form-section .btn-wrapper button {
