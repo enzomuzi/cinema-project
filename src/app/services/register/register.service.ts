@@ -10,9 +10,9 @@ export class RegisterService {
 
   constructor(private httpClient: HttpClient) { }
 
-  register(register: string, password: string, role: 'USER') {
+  register(login: string, password: string, role: 'USER') {
     return this.httpClient.post<LoginReturnType>('http://localhost:8080/auth/register', {
-      register,
+      login,
       password,
       role
     }).pipe(

@@ -28,13 +28,13 @@ export class TelaLoginComponent {
     private toastService: ToastrService
   ) {
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
+      login: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     });
   }
 
   submit() {
-    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
+    this.loginService.login(this.loginForm.value.login, this.loginForm.value.password).subscribe({
       next: () => {
         this.toastService.success('Login realizado com sucesso', 'Bem-vindo!');
         this.router.navigate(['/cartaz']);

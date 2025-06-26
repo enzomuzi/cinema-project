@@ -1,16 +1,16 @@
   <app-layout-login
     title="Cinema Muzi"
     primaryBtnText="Entrar"
-    secondaryBtnText="Registrar"
+    secondaryBtnText="Login"
     (submit)="submit()"
     (navigate)="navigate()"
     [disablePrimaryBtn]="!registerForm.valid"
   >
   <form [formGroup]="registerForm">
     <app-input-primary
-      formControlName="email"
-      inputName="email"
-      type="email"
+      formControlName="login"
+      inputName="login"
+      type="login"
       label="Email"
       placeholder="Digite seu email"
     >

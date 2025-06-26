@@ -35,7 +35,7 @@ export class TelaRegisterComponent {
 ) {
   this.registerForm = new FormGroup(
     {
-      email: new FormControl('', [Validators.required, Validators.email]),
+      login: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)]),
       role: new FormControl('USER', [Validators.required])
@@ -46,7 +46,7 @@ export class TelaRegisterComponent {
 
 
   submit() {
-    this.registerService.register(this.registerForm.value.email, this.registerForm.value.password, this.registerForm.value.role).subscribe({
+    this.registerService.register(this.registerForm.value.login, this.registerForm.value.password, this.registerForm.value.role).subscribe({
       next: () => {
         this.toastService.success('Registro realizado com sucesso', 'Bem-vindo!');
         this.router.navigate(['/cartaz']);
@@ -55,6 +55,6 @@ export class TelaRegisterComponent {
     });
   }
   navigate() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/login']);
   }
 }
