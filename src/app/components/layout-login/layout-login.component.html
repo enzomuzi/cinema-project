@@ -1,15 +1,29 @@
 <main>
-  <section>
-    <img src="/assets/svg/Clap_cinema.svg" alt="" />
-    <h2></h2>
-    <button></button>
-    <div>
+  <section class="form-section">
+    <img src="/assets/logo_cinema.png" alt="Logo do Cinema Muzi" />
+    <ng-content></ng-content>
+    <div class="btn-wrapper">
+    <button
+      class="button btn-primary"
+      (click)="submit()"
+      [disabled]="disablePrimaryBtn"
+      >
+      {{ primaryBtnText }}
+    </button>
+    <div class="divider">
+      <div></div>
       <span>ou</span>
+      <div></div>
     </div>
-    <button></button>
+    <button
+      class="button btn-secondary"
+      (click)="navigate()"
+      >
+      {{ secondaryBtnText }}
+  </button>
+  </div>
   </section>
-  <section>
-    <h1>Cinema MUzi</h1>
-    <img src="" alt="" />
+  <section class="main-section">
+    <img src="/assets/cinema_muzi.png" alt="Arte do Cinema Muzi" />
   </section>
 </main>

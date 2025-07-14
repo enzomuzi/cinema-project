@@ -26,3 +26,18 @@
   align-items: center;
   justify-content: center;
 }
+
+.toolbar {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
