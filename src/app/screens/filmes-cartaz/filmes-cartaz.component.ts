@@ -34,8 +34,6 @@ export class FilmesCartazComponent implements OnInit {
 
   displayedColumns = ['name', 'language', 'hours', 'img'];
 
-  // dataSource: MatTableDataSource<any> = new MatTableDataSource();
-
   constructor(
     private filmesCartazService: FilmesCartazService,
     public dialog: MatDialog
